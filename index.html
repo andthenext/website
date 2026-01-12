@@ -1,112 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The official portfolio of Dietmar Rietsch – Visionary entrepreneur, investor, and CEO of Pimcore. Discover 'And The Next', a hub for future-facing ventures, agentic innovation, and business growth.">
     <title>And The Next — Invest. Create. Evolve.</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PK419HJT4Y"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-PK419HJT4Y');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-PK419HJT4Y');
     </script>
 </head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <span class="nav-title">AND THE NEXT</span>
-            <button class="theme-toggle" aria-label="Toggle theme">
-                <span class="theme-icon">◐</span>
-            </button>
-        </div>
-    </nav>
+
+<body class="loading">
+    <div class="cursor-follower"></div>
+
+    <!-- Global Logo -->
+    <div id="logo-container" class="global-logo-container" style="display: none;">
+        <img src="assets/and-the-next-logo.png" alt="And The Next Logo" class="global-logo">
+    </div>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <div class="logo-container">
-                <video
-                    class="logo-video"
-                    autoplay
-                    loop
-                    muted
-                    playsinline
-                    poster=""
-                >
-                    <source src="assets/logo.mp4" type="video/mp4">
+    <section id="hero" class="hero-section">
+        <div class="hero-video-container">
+            <div class="video-wrapper">
+                <video id="hero-video" class="hero-video" autoplay playsinline>
+                    <source src="assets/and-the-next-intro.mp4" type="video/mp4">
                 </video>
             </div>
-            <h1 class="hero-tagline">Where ideas evolve into ventures.</h1>
-            <div class="scroll-indicator">
-                <span>Scroll</span>
-                <div class="scroll-line"></div>
-            </div>
         </div>
-        <div class="grain-overlay"></div>
+        <!-- SVG Filter Definitions (Global) -->
+        <svg style="position: absolute; width: 0; height: 0; pointer-events: none;">
+            <defs>
+                <filter id="rugged-edge" x="-20%" y="-20%" width="140%" height="140%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" result="noise" seed="0" />
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="35" xChannelSelector="R"
+                        yChannelSelector="G" />
+                </filter>
+            </defs>
+        </svg>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">And The Next</h2>
-            </div>
+    <!-- Bento Grid -->
+    <section id="bento" class="bento-section">
+        <div class="bento-grid">
 
-            <div class="about-content">
-                <p class="about-text large">
-                    And The Next is the personal venture lab of Dietmar Rietsch — entrepreneur, investor, and creator.
-                </p>
-                <p class="about-text">
-                    Focused on startup investments, digital product creation, and real estate ventures, And The Next exists to explore what comes after what's now.
-                </p>
-            </div>
+            <!-- 1. And The Next -->
+            <article class="bento-item item-next">
 
-            <!-- Founder Card -->
-            <div class="founder-card">
-                <div class="founder-info">
-                    <h3 class="founder-name">Dietmar Rietsch</h3>
-                    <div class="founder-description">
-                        <p>Serial entrepreneur from Salzburg, Austria.</p>
-                        <p>CEO of <strong>Pimcore</strong>, the global open-source platform for data & digital experience management.</p>
-                        <p>Partner at <strong>valantic</strong>, one of Europe's leading digital consultancies.</p>
-                        <p class="founder-motto">Constantly building, shaping, and scaling what comes next.</p>
+                <div class="bento-content">
+                    <span class="item-label">01 // Venture Lab</span>
+                    <h2 class="item-title">And The Next</h2>
+                    <p class="item-desc">
+                        Hub for investor and private business activities. Serial-entrepreneur <strong>Dietz</strong>
+                        consults companies in Growth, Business Development, Agentic Development, and M&A.
+                    </p>
+                    <div class="item-visual visual-next"></div>
+                </div>
+            </article>
+
+            <!-- 2. Pimcore -->
+            <article class="bento-item item-pimcore">
+                <div class="bento-content">
+                    <span class="item-label">02 // Platform</span>
+                    <h2 class="item-title">Pimcore</h2>
+                    <p class="item-desc">
+                        Dietz is the CEO of Pimcore. A leading open-source data and experience management platform,
+                        empowering organizations to manage digital experiences at scale.
+                    </p>
+                    <div class="item-visual visual-pimcore">
+                        <!-- Simplified logo/visual representation -->
+                        <span class="visual-text">GLOBAL SCALE</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3. Valantic -->
+            <article class="bento-item item-valantic">
+                <div class="bento-content">
+                    <span class="item-label">03 // Advisory</span>
+                    <h2 class="item-title">valantic</h2>
+                    <p class="item-desc">
+                        Dietz is Partner of the valantic Group. One of the fastest-growing digital consulting and
+                        software companies in Europe, combining deep industry expertise with technological excellence.
+                    </p>
+                    <div class="item-visual visual-valantic">
+                        <span class="visual-text">EUROPEAN POWERHOUSE</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="projects-container">
+            <h2 class="section-heading">Proof of Action</h2>
+
+            <div class="project-list">
+                <!-- Keynote -->
+                <div class="project-item">
+                    <span class="project-year">ON STAGE</span>
+                    <div class="project-details">
+                        <h3 class="project-title">Keynote Presenter</h3>
+                        <p class="project-desc">Speaker at international conferences on Open Source, Digital
+                            Transformation, and Future Tech.</p>
+                    </div>
+                </div>
+
+                <!-- Book -->
+                <div class="project-item">
+                    <span class="project-year">AUTHOR</span>
+                    <div class="project-details">
+                        <h3 class="project-title">A Journey into Open Source</h3>
+                        <a href="https://www.amazon.de/Journey-into-Open-Source-Dietmar-Rietsch/dp/B0CNYB1SD2"
+                            target="_blank" class="project-link">View on Amazon ↗</a>
+                    </div>
+                </div>
+
+                <!-- Podcast -->
+                <div class="project-item">
+                    <span class="project-year">AUDIO</span>
+                    <div class="project-details">
+                        <h3 class="project-title">The Daily Dose of Dietz</h3>
+                        <p class="project-desc">Unfiltered thoughts on business and life.</p>
+                        <a href="https://open.spotify.com/artist/0wIeX3oc5lRW03yl8zSABf?si=j0hnNMKhRFWsmLs9jV7LNg"
+                            target="_blank" class="project-link">Listen on Spotify ↗</a>
+                    </div>
+                </div>
+
+                <!-- Swarm.press -->
+                <div class="project-item">
+                    <span class="project-year">AGENTIC</span>
+                    <div class="project-details">
+                        <h3 class="project-title">swarm.press</h3>
+                        <p class="project-desc">Autonomous, agentic publishing platform.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2 class="contact-name">Dietmar Rietsch</h2>
-                <div class="contact-links">
-                    <a href="mailto:dietmar.rietsch@andthenext.at" class="contact-link">
-                        <span class="contact-icon">📧</span>
-                        <span class="contact-text">dietmar.rietsch@andthenext.at</span>
-                    </a>
-                    <a href="https://linkedin.com/in/rietsch" target="_blank" rel="noopener" class="contact-link">
-                        <span class="contact-icon">🔗</span>
-                        <span class="contact-text">linkedin.com/in/rietsch</span>
-                    </a>
+    <!-- Strengths & Personality Section -->
+    <section id="strengths" class="strengths-section">
+        <div class="strengths-container">
+            <div class="strength-statement">
+                <p class="highlight-text">Visionary entrepreneur. <br>50-year-old serial builder.</p>
+                <p class="highlight-text">Drives innovation with <span class="accent-text">passion and f*cking
+                        courage.</span></p>
+                <div class="personal-note">
+                    <p>Often positive, sometimes edgy.</p>
+                    <p>Happily married. Father of two.</p>
+                    <p>Believer in the good.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-text">© 2025 And The Next. All rights reserved.</p>
+    <!-- Imprint / Footer -->
+    <footer id="imprint" class="imprint-section">
+        <div class="imprint-container">
+            <div class="imprint-block">
+                <h4>And The Next GmbH</h4>
+                <p>Hugo-Wolf-Straße 4<br>5020 Salzburg<br>Austria</p>
+            </div>
+            <div class="imprint-block">
+                <p><strong>Firmenbuchnummer:</strong> FN 649590 f</p>
+                <p><strong>Geschäftsführer:</strong> Dietmar Rietsch</p>
+                <p><a href="mailto:dietmar.rietsch@andthenext.at" class="email-link">dietmar.rietsch@andthenext.at</a>
+                </p>
+            </div>
+            <div class="imprint-block copyright">
+                <p>A quiet statement.</p>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

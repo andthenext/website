@@ -34,18 +34,35 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (heroVideo) {
+        const playBtn = document.getElementById('hero-play-btn');
+
         // Listen for end
         heroVideo.addEventListener('ended', onVideoEnd);
 
         // Just in case it loops or whatever, if manually set to not loop
         heroVideo.loop = false;
 
-        // Attempt to unmute if blocked
-        heroVideo.play().catch(e => {
-            console.log("Autoplay blocked, waiting for interaction", e);
-            // Fallback: Muted autoplay if error?
-            heroVideo.muted = true;
-            heroVideo.play();
+        // Manual Play
+        if (playBtn) {
+            playBtn.addEventListener('click', () => {
+                heroVideo.muted = false;
+                heroVideo.play().then(() => {
+                    playBtn.style.display = 'none';
+                }).catch(e => console.error("Play failed", e));
+            });
+        }
+
+        // Attempt Autoplay (Unmuted first)
+        // If it plays unmuted, great, hide button.
+        // If blocked, just show button (default state) and do nothing (let user click).
+        heroVideo.play().then(() => {
+            // Autoplay successful
+            if (playBtn) playBtn.style.display = 'none';
+        }).catch(e => {
+            // Autoplay blocked (expected in most browsers if unmuted)
+            // Leave button visible. 
+            // Do NOT fallback to muted autoplay, as user wants "start with sound" via button or auto.
+            console.log("Autoplay blocked, showing play button", e);
         });
     }
 
